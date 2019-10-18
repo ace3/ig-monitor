@@ -1,0 +1,19 @@
+{
+  "name": "ig-monitor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "instagram-scraping": "^1.0.11",
+    "lowdb": "^1.0.0",
+    "node-cron": "^2.0.3",
+    "node-telegram-bot-api": "^0.30.0"
+  }
+}
