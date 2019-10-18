@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "code:clean": "yarn code:lint && yarn code:format",
+    "code:lint": "eslint --ext .js,.jsx,.ts,.tsx \"src/\" --fix",
+    "code:format": "prettier './src/**/**.{js,jsx,ts,tsx}' --write",
+    "code:check:rules": "eslint --print-config .eslintrc.js | eslint-config-prettier-check"
   },
   "keywords": [],
   "author": "",
@@ -15,5 +19,8 @@
     "lowdb": "^1.0.0",
     "node-cron": "^2.0.3",
     "node-telegram-bot-api": "^0.30.0"
+  },
+  "devDependencies": {
+    "poetic": "^1.0.5"
   }
 }

@@ -1,7 +1,14 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+/* eslint-disable no-console */
+/* eslint-disable @typescript-eslint/camelcase */
+/* eslint-disable no-restricted-syntax */
+
+
 require('dotenv').config()
-var ig = require('instagram-scraping')
+const ig = require('instagram-scraping')
 const low = require('lowdb')
 const FileSync = require('lowdb/adapters/FileSync')
+
 const adapter = new FileSync('db.json')
 const db = low(adapter)
 const TelegramBot = require('node-telegram-bot-api')
@@ -39,7 +46,7 @@ async function init(username) {
               .write()
 
             const generatedUrl = `https://www.instagram.com/p/${data.shortcode}/`
-            bot.sendMessage(chatId, data.text + '\n\n' + generatedUrl)
+            bot.sendMessage(chatId, `${data.text  }\n\n${  generatedUrl}`)
           }
         }
       }
