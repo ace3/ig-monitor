@@ -8,6 +8,7 @@ require('dotenv').config()
 const ig = require('instagram-scraping')
 const low = require('lowdb')
 const FileSync = require('lowdb/adapters/FileSync')
+const cron = require('node-cron')
 
 const adapter = new FileSync('db.json')
 const db = low(adapter)
@@ -54,10 +55,17 @@ async function init(username) {
   })
 }
 
-start()
 
-const stores = ['inestaku', 'ifootballstore']
+const task = cron.schedule('*/5 * * * *', () => {
 
-for (const store of stores) {
-  init(store)
-}
+  start()
+  const stores = ['inestaku', 'ifootballstore']
+  for (const store of stores) {
+    init(store)
+  }
+});
+
+
+
+task.start();
+
