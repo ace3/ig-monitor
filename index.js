@@ -53,6 +53,9 @@ async function init(username) {
       }
     }
   })
+  .catch(error){
+    console.log(error);
+  }
 }
 
 
