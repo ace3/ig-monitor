@@ -56,7 +56,7 @@ async function init(username) {
 }
 
 
-const task = cron.schedule('*/5 * * * *', () => {
+const task = cron.schedule('* * * * *', () => {
 
   start()
   const stores = ['inestaku', 'ifootballstore']
